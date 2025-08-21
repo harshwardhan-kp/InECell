@@ -1,9 +1,34 @@
 import { useParams, Link } from 'react-router-dom'
 import clubs from '../data/clubs'
 
+interface Resource {
+  title: string;
+  url: string;
+}
+
+interface Contact {
+  role: string;
+  name: string;
+  dept?: string;
+}
+
+interface Club {
+  slug: string;
+  imageUrl?: string;
+  name: string;
+  category: string;
+  description: string;
+  socials?: { [key: string]: string };
+  website?: string;
+  resources?: Resource[];
+  contacts?: Contact[];
+  announcements?: string[];
+  events?: { title: string; date: string; location: string }[];
+}
+
 export default function ClubDetail() {
   const { slug } = useParams()
-  const club = clubs.find(c => c.slug === slug)
+  const club = clubs.find((c: Club) => c.slug === slug) as Club | undefined
 
   if (!club) {
     return (
@@ -52,7 +77,7 @@ export default function ClubDetail() {
         <section>
           <h2 className="text-xl font-semibold mb-3">Resources</h2>
           <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
-            {club.resources.map((r, i) => (
+            {club.resources.map((r: Resource, i: number) => (
               <li key={i}><a className="text-brand-300 underline" href={r.url} target="_blank" rel="noreferrer">{r.title}</a></li>
             ))}
           </ul>
@@ -63,7 +88,7 @@ export default function ClubDetail() {
         <section>
           <h2 className="text-xl font-semibold mb-3">Contacts</h2>
           <ul className="text-sm text-gray-300 space-y-1">
-            {club.contacts.map((c, i) => (
+            {club.contacts.map((c: Contact, i: number) => (
               <li key={i}>
                 <span className="text-gray-400">{c.role}:</span> {c.name}{c.dept ? `, ${c.dept}` : ''}
               </li>
