@@ -1,0 +1,13 @@
+0 verbose cli /opt/homebrew/Cellar/node@18/18.20.8/bin/node /opt/homebrew/opt/node@18/bin/npm
+1 info using npm@10.8.2
+2 info using node@v18.20.8
+3 silly config load:file:/opt/homebrew/Cellar/node@18/18.20.8/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/harshwardhan/Documents/InECell/.npmrc
+5 silly config load:file:/Users/harshwardhan/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm run dev
+8 verbose argv "run" "dev"
+9 verbose logfile logs-max:10 dir:/Users/harshwardhan/Documents/InECell/.npm-cache/_logs/2025-08-21T09_28_16_875Z-
+10 verbose logfile /Users/harshwardhan/Documents/InECell/.npm-cache/_logs/2025-08-21T09_28_16_875Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
